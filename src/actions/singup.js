@@ -1,30 +1,32 @@
 
 import {
-    ON_LOGIN,
-    ON_SUCCESS_LOGIN,
+    ON_SING_UP,
+    ON_SUCCESS_SING_UP,
     ON_ERROR,
     ON_RETRIEVE_SESSION
-} from '../types/user';
-import { initializeAxios } from '../herlpers/axios';
+} from '../types/singup';
 import { saveSession } from '../herlpers/session';
 import axios from 'axios';
+import { showError } from '../herlpers/alert';
 
-export function login(form,nav){
+export function singup(form,nav){
     return async (dispatch) => {
         dispatch(onLogin());
         try {
-            initializeAxios();
-            const { user, password } = form;
+            const { user, password, name, phone } = form;
             const response = await axios
-            .post(process.env.REACT_APP_API_BASE_URL + "/auth/login",{
+            .post(process.env.REACT_APP_API_BASE_URL + "/auth/singup",{
                 email: user,
                 password,
-                audience: process.env.REACT_APP_AUDIENCE
+                name,
+                phone,
             });
             dispatch(onSuccess(response.data));
             saveSession(response.data);
+            nav.push('/')
         } catch (error) {
             dispatch(onError(error));
+            showError('Ups', 'Tus credenciales son incorrectas');
         }
     }
 }
@@ -37,11 +39,11 @@ export function setUserSession(user) {
 
 
 const onLogin = () => ({
-    type: ON_LOGIN
+    type: ON_SING_UP
 })
 
 const onSuccess= (response) => ({
-    type: ON_SUCCESS_LOGIN,
+    type: ON_SUCCESS_SING_UP,
     payload: response
 })
 

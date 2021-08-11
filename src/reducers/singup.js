@@ -1,24 +1,24 @@
 import {
-    ON_LOGIN,
-    ON_SUCCESS_LOGIN,
+    ON_SING_UP,
+    ON_SUCCESS_SING_UP,
     ON_ERROR,
-}from '../types/user';
+}from '../types/singup';
 
 const initialState = {
     user:null,
-    loading:false,
+    loading:true,
     error:null
 }
 
-export default function userReducer (state = initialState, action) {
+export default function singUpReducer (state = initialState, action) {
     switch(action.type){
-        case ON_LOGIN:
+        case ON_SING_UP:
             return {
                 ...state,
                 loading:true,
                 error:null
             }
-        case ON_SUCCESS_LOGIN:
+        case ON_SUCCESS_SING_UP:
             return {
                 ...state,
                 loading:false,

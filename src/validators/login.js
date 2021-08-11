@@ -1,13 +1,13 @@
-import swal from 'sweetalert';
+import { showInfo } from '../herlpers/alert';
 
-export function validateLogin(form){
+export function validate(form){
     const {user,password} = form;
     if(user.trim()=== ''){
-        swal("Hey!", "Escribe un correo");
+        showInfo('Hey!', 'Escribe un correo')
         return false;
     }
     if(password.trim() === ''){
-        swal("Hey!", "Escribe una contraseña");
+        showInfo('Hey!', 'Escribe una contraseña')
         return false;
     }
     return true
