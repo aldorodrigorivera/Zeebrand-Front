@@ -10,8 +10,7 @@ export const processUser = user => {
 
 export function saveSession(user){
     window.localStorage.setItem('session', JSON.stringify(user));
-    // eslint-disable-next-line no-undef
-    analytics.identify(user.id, user);
+    window.localStorage.setItem('token', JSON.stringify(user.token));
 }
 
 export function getSession(key){

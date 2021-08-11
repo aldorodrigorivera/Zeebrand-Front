@@ -6,6 +6,7 @@ import Login from './pages/Login';
 import SingUp from './pages/SingUp';
 import NotFound from './pages/NotFound';
 
+
 function App() {
   return (
     <div>

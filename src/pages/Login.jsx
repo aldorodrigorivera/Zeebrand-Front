@@ -3,17 +3,21 @@ import { useHistory } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Loading from '../components/Loading';
 import { validateLogin } from '../validators/login';
+import { useDispatch, useSelector } from 'react-redux';
+import { login } from '../actions/users';
 
 export default function NotFound() {
 
     const [form, changeForm] = useState({user:'',password:''});
-    const onChange = e => changeForm({ ...form, [e.target.name]:e.target.value });
     const nav = useHistory();
+    const dispatch = useDispatch();
+    const { loading } = useSelector(state => state.userReducer);
+    const onChange = e => changeForm({ ...form, [e.target.name]:e.target.value });
     const goTo = (url) => nav.push(url);
-    
     const onSubmit = () => {
         const valid = validateLogin(form);
         if(!valid){ return; }
+        dispatch(login(form,nav));
         changeForm({user:'', password:''});
     }
     return (
@@ -61,9 +65,9 @@ export default function NotFound() {
                         />
                     </div>
                     {
-                        true ? 
+                        !loading ? 
                             <button 
-                                disabled={false}
+                                disabled={loading}
                                 className="text-white bg-blue-500 border-0 py-2 px-8 focus:outline-none hover:bg-blue-600 rounded text-lg"
                                 onClick={() => onSubmit()}
                             >Iniciar sesión 👀</button>
