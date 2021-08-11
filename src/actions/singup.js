@@ -26,7 +26,7 @@ export function singup(form,nav){
             nav.push('/')
         } catch (error) {
             dispatch(onError(error));
-            showError('Ups', 'Tus credenciales son incorrectas');
+            showError('Ups', 'Verifica que tu información sea correcta.');
         }
     }
 }

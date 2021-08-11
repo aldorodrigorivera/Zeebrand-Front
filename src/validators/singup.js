@@ -1,8 +1,7 @@
-/* eslint-disable no-useless-escape */
 import { showInfo } from '../herlpers/alert';
 
 export function validate(form){
-    const validEmail = "/\S+@\S+\.\S+/";
+    const validEmail = "/\\S+@\\S+\\.\\S+/";
     
     const {user, password, name, phone} = form;
 
