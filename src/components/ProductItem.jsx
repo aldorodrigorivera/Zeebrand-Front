@@ -2,7 +2,7 @@ import React from 'react'
 import { useHistory } from 'react-router-dom';
 export default function ProductItem ({product}) {
     const nav = useHistory();
-    const goTo = id => nav.push('/product/'+id)
+    const goTo = id => nav.push('/products/'+id)
     const defaultURL = "https://dummyimage.com/600x360"
     return (
         <div className="lg:w-1/3 sm:w-1/2 p-4" onClick={() => goTo(product.objectId)}>

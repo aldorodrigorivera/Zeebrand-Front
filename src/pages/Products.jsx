@@ -22,7 +22,7 @@ export default function Products () {
                         Solo aquí encontraras las mejores ofertas.
                     </p> 
                     <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
-                        Ven y conóce lo que tenemos para ti.
+                        Ven y conóce lo que tenemos para ti. Aqui te mostramos las 6 ofertas mas importantes 🤩
                     </p> 
                 </div>
                 {
@@ -39,6 +39,12 @@ export default function Products () {
                 
             </div>
            </section>
+           <div className="container px-5 py-4 mx-auto text-center">
+            <button 
+                className="ml-4 inline-flex text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-200 rounded text-lg">
+                Agregar producto 😏
+            </button>
+           </div>
         </div>
     )
 }

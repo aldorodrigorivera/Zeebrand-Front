@@ -6,6 +6,8 @@ import Login from './pages/Login';
 import SingUp from './pages/SingUp';
 import NotFound from './pages/NotFound';
 import Products from './pages/Products';
+import ProductDetail from "./pages/ProductDetail";
+import CreateProduct from "./pages/CreateProduct";
 
 
 function App() {
@@ -18,10 +20,8 @@ function App() {
             <Route exact path="/login" component={Login}/>
             <Route exact path="/singup" component={SingUp}/>
             <Route exact path="/products" component={Products}/>
-            {/* <Auth>
-              <Route exact path="/pacientes" component={Pacients}/>
-              <Route exact path="/reservaciones" component={Reservations}/>
-            </Auth> */}
+            <Route exact path="/products/:id" component={ProductDetail}/>
+            <Route exact path="/products/add" component={CreateProduct}/>
             <Route exact path="*" component={NotFound}/>
           </Switch>
         </Router>

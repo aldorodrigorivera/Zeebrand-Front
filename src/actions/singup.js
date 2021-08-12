@@ -23,7 +23,7 @@ export function singup(form,nav){
             });
             dispatch(onSuccess(response.data));
             saveSession(response.data);
-            nav.push('/')
+            nav.push('/products')
         } catch (error) {
             dispatch(onError(error));
             showError('Ups', 'Verifica que tu información sea correcta.');
