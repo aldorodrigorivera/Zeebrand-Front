@@ -22,7 +22,7 @@ export default function Products () {
                         Solo aquí encontraras las mejores ofertas.
                     </p> 
                     <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
-                        Ven y conóce lo que tenemos para ti. Aqui te mostramos las 6 ofertas mas importantes 🤩
+                        Ven y conóce lo que tenemos para ti. Aqui te mostramos las ofertas mas importantes 🤩
                     </p> 
                 </div>
                 {

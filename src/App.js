@@ -21,7 +21,7 @@ function App() {
             <Route exact path="/singup" component={SingUp}/>
             <Route exact path="/products" component={Products}/>
             <Route exact path="/products/:id" component={ProductDetail}/>
-            <Route exact path="/products/add" component={CreateProduct}/>
+            <Route exact path="/create-product" component={CreateProduct}/>
             <Route exact path="*" component={NotFound}/>
           </Switch>
         </Router>

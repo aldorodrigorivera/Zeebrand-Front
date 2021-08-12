@@ -1,13 +1,17 @@
 import {
     ON_PRODUCTS,
-    ON_SUCCESS_GET_PRODUCTS,
     ON_ERROR,
+    ON_SUCCESS_GET_PRODUCT,
+    ON_SUCCESS_GET_PRODUCTS,
+    ON_SUCCESS_DELETE_PRODUCT,
+    ON_SUCCESS_UPDATE_PRODUCT,
 }from '../types/products';
 
 const initialState = {
     products:[],
     loading:true,
-    error:null
+    error:null,
+    product:null,
 }
 
 export default function singUpReducer (state = initialState, action) {
@@ -23,6 +27,18 @@ export default function singUpReducer (state = initialState, action) {
                 ...state,
                 loading:false,
                 products:action.payload,
+            }
+        case ON_SUCCESS_GET_PRODUCT:
+            return {
+                ...state,
+                loading:false,
+                product:action.payload,
+            }
+        case ON_SUCCESS_DELETE_PRODUCT, ON_SUCCESS_UPDATE_PRODUCT:
+            return {
+                ...state,
+                loading:false,
+                product:null,
             }
         case ON_ERROR:
             return {

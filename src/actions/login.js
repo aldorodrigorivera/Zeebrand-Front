@@ -8,6 +8,7 @@ import {
 import { saveSession } from '../herlpers/session';
 import axios from 'axios';
 import { showError } from '../herlpers/alert';
+const baseURL = process.env.REACT_APP_API_BASE_URL;
 
 export function login(form,nav){
     return async (dispatch) => {
@@ -15,7 +16,7 @@ export function login(form,nav){
         try {
             const { user, password } = form;
             const response = await axios
-            .post(process.env.REACT_APP_API_BASE_URL + "/auth/login",{
+            .post(baseURL+ "/auth/login",{
                 email: user,
                 password,
                 audience: process.env.REACT_APP_AUDIENCE
