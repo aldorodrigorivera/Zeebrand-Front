@@ -5,7 +5,6 @@ import {
     ON_ERROR,
     ON_RETRIEVE_SESSION
 } from '../types/login';
-import { initializeAxios } from '../herlpers/axios';
 import { saveSession } from '../herlpers/session';
 import axios from 'axios';
 import { showError } from '../herlpers/alert';
@@ -14,7 +13,6 @@ export function login(form,nav){
     return async (dispatch) => {
         dispatch(onLogin());
         try {
-            initializeAxios();
             const { user, password } = form;
             const response = await axios
             .post(process.env.REACT_APP_API_BASE_URL + "/auth/login",{
