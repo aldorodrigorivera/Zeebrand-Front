@@ -5,6 +5,10 @@ import {
     ON_ERROR,
     ON_RETRIEVE_SESSION
 } from '../types/login';
+<<<<<<< HEAD
+=======
+import { initializeAxios } from '../herlpers/axios';
+>>>>>>> df9e5c2d34ff622742ee8b41f2d965a8d3700283
 import { saveSession } from '../herlpers/session';
 import axios from 'axios';
 import { showError } from '../herlpers/alert';
@@ -13,6 +17,10 @@ export function login(form,nav){
     return async (dispatch) => {
         dispatch(onLogin());
         try {
+<<<<<<< HEAD
+=======
+            initializeAxios();
+>>>>>>> df9e5c2d34ff622742ee8b41f2d965a8d3700283
             const { user, password } = form;
             const response = await axios
             .post(process.env.REACT_APP_API_BASE_URL + "/auth/login",{
