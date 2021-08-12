@@ -13,7 +13,7 @@ export function validate(form){
         showInfo('Hey!', 'Escribe tu nombre')
         return false;
     }
-    if(phone.trim() === '' || name.length < 10 || phone.trim().length > 10){
+    if(phone.trim() === '' || phone.trim().length <= 9 || phone.trim().length >= 11){
         showInfo('Hey!', 'Escribe tu celular en 10 caracteres')
         return false;
     }

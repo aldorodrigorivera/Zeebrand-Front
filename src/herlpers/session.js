@@ -20,3 +20,10 @@ export function getSession(key){
 export function deleteSession(){
     window.localStorage.clear();
 }
+
+export function sessionError(nav,error){
+    if(error.response.status === 401){
+        deleteSession();
+        nav.push('/login');
+    }
+}

@@ -4,12 +4,15 @@ import Head from '../components/Header'
 import ProductItem from '../components/ProductItem'
 import { getProducts } from '../actions/products';
 import Loading from '../components/Loading';
+import { useHistory } from 'react-router-dom';
 
 export default function Products () {
     const dispatch = useDispatch();
+    const nav = useHistory();
+    const goTo = url => nav.push(url);
     const { products, loading } = useSelector(state => state.productReducer);
     useEffect(() => {
-        dispatch(getProducts())
+        dispatch(getProducts(nav))
     }, [])
     return (
         <div>
@@ -41,8 +44,10 @@ export default function Products () {
            </section>
            <div className="container px-5 py-4 mx-auto text-center">
             <button 
-                className="ml-4 inline-flex text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-200 rounded text-lg">
-                Agregar producto 😏
+                className="ml-4 inline-flex text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-200 rounded text-lg"
+                onClick={() => goTo('/create-product')}
+                >
+                Registrar producto 😏
             </button>
            </div>
         </div>

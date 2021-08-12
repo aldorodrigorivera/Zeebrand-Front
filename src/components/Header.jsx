@@ -1,12 +1,17 @@
 import React from 'react'
 import { Link, useHistory } from 'react-router-dom';
 import { deleteSession } from '../herlpers/session';
+import { showInfo } from '../herlpers/alert';
+
 export default function Header (){
     const nav = useHistory();
     const logout = () => {
         deleteSession();
         nav.push('/');
     }
+    const nextTime = () => {
+        showInfo('Ups!','Lo sentimos, esta características estará disponible pronto');
+    };
     return (
         <div>
             <header className="text-gray-600 body-font">
@@ -17,7 +22,7 @@ export default function Header (){
                     <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
                     <Link to="/products" className="mr-5 hover:text-gray-900">Productos</Link>
                     <Link to="/create-product" className="mr-5 hover:text-gray-900">Registrar Producto</Link>
-                    <Link to="#" className="mr-5 hover:text-gray-900">Sorpréndete</Link>
+                    <Link to="#" onClick={() => nextTime()} className="mr-5 hover:text-gray-900">Sorpréndete</Link>
                     <Link to="#" onClick={() => logout()} className="mr-5 hover:text-gray-900">Cerrar sesión</Link>
                     </nav>
                 </div>

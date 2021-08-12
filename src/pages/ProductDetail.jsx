@@ -20,9 +20,11 @@ export default function ProductDetail () {
     }
     const updatePrice = async(product) => {
         const {value: price} = await showInputNumber("Introduce el nuevo precio del producto:");
-        dispatch(updateProductPrice(product,price,nav))
+        if(price) {
+            dispatch(updateProductPrice(product,price,nav))
+        }
     }
-    useEffect(() => dispatch(getProduct(id)), []);
+    useEffect(() => dispatch(getProduct(id,nav)), []);
     return (
         <div>
             <Header/>
@@ -47,7 +49,7 @@ export default function ProductDetail () {
                                 <button 
                                     className="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg"
                                     onClick={() => updatePrice(product)}>
-                                    Aplicar promoción
+                                    Modifica el precio del producto
                                 </button>
                             </div>
                             </div>

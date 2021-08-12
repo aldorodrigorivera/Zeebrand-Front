@@ -5,11 +5,12 @@ import {
     ON_SUCCESS_GET_PRODUCTS,
     ON_SUCCESS_DELETE_PRODUCT,
     ON_SUCCESS_UPDATE_PRODUCT,
+    ON_SUCCESS_INSERT_PRODUCT
 }from '../types/products';
 
 const initialState = {
     products:[],
-    loading:true,
+    loading:false,
     error:null,
     product:null,
 }
@@ -34,7 +35,7 @@ export default function singUpReducer (state = initialState, action) {
                 loading:false,
                 product:action.payload,
             }
-        case ON_SUCCESS_DELETE_PRODUCT, ON_SUCCESS_UPDATE_PRODUCT:
+        case ON_SUCCESS_DELETE_PRODUCT, ON_SUCCESS_UPDATE_PRODUCT, ON_SUCCESS_INSERT_PRODUCT:
             return {
                 ...state,
                 loading:false,
