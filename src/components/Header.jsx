@@ -2,10 +2,13 @@ import React from 'react'
 import { Link, useHistory } from 'react-router-dom';
 import { deleteSession } from '../herlpers/session';
 import { showInfo } from '../herlpers/alert';
-
+import { useDispatch } from 'react-redux';
+import { logout } from '../actions/login';
 export default function Header (){
     const nav = useHistory();
-    const logout = () => {
+    const dispatch = useDispatch();
+    const closeSession = () => {
+        dispatch(logout());
         deleteSession();
         nav.push('/');
     }
@@ -23,7 +26,7 @@ export default function Header (){
                     <Link to="/products" className="mr-5 hover:text-gray-900">Productos</Link>
                     <Link to="/create-product" className="mr-5 hover:text-gray-900">Registrar Producto</Link>
                     <Link to="#" onClick={() => nextTime()} className="mr-5 hover:text-gray-900">Sorpréndete</Link>
-                    <Link to="#" onClick={() => logout()} className="mr-5 hover:text-gray-900">Cerrar sesión</Link>
+                    <Link to="#" onClick={() => closeSession()} className="mr-5 hover:text-gray-900">Cerrar sesión</Link>
                     </nav>
                 </div>
             </header>
