@@ -30,7 +30,7 @@ export default function Products () {
                 </div>
                 {
                     !loading ? 
-                    <div className="flex flex-wrap -m-4">
+                    <div className="grid lg:grid-flow-col lg:grid-cols-3 md:grid-flow-col md:grid-cols-2 sm:grid-flow-col md:grid-cols-1">
                         {
                             products.map((item) => <ProductItem 
                                 key={item.objectId} 

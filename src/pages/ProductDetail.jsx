@@ -41,16 +41,18 @@ export default function ProductDetail () {
                              aprovecha el super precio porque en cualquier momento podría 
                              cambiar o dejar de estar disponible</p>
                             <div className="flex justify-center">
-                                <button 
-                                    className="inline-flex text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded text-lg"
-                                    onClick={() => deleteProduct(id)}>
-                                    Eliminar
-                                </button>
-                                <button 
-                                    className="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg"
-                                    onClick={() => updatePrice(product)}>
-                                    Modifica el precio del producto
-                                </button>
+                                <div className="lg:w-1/2 mx-auto md:w-full">
+                                    <button 
+                                        className="md:m-4 inline-flex text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded text-lg"
+                                        onClick={() => deleteProduct(id)}>
+                                        Eliminar
+                                    </button>
+                                    <button 
+                                        className="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg"
+                                        onClick={() => updatePrice(product)}>
+                                        Modifica el precio del producto
+                                    </button>
+                                </div>
                             </div>
                             </div>
                         </div>
