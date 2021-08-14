@@ -9,13 +9,15 @@ import { saveSession } from '../herlpers/session';
 import axios from 'axios';
 import { showError } from '../herlpers/alert';
 
+const baseURL = process.env.REACT_APP_API_BASE_URL;
+
 export function singup(form,nav){
     return async (dispatch) => {
         dispatch(onLogin());
         try {
             const { user, password, name, phone } = form;
             const response = await axios
-            .post(process.env.REACT_APP_API_BASE_URL + "/auth/singup",{
+            .post(baseURL + "/auth/singup",{
                 email: user,
                 password,
                 name,
@@ -23,7 +25,7 @@ export function singup(form,nav){
             });
             dispatch(onSuccess(response.data));
             saveSession(response.data);
-            nav.push('/')
+            nav.push('/products')
         } catch (error) {
             dispatch(onError(error));
             showError('Ups', 'Verifica que tu información sea correcta.');

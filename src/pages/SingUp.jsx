@@ -7,9 +7,9 @@ import { singup } from '../actions/singup';
 
 export default function NotFound(){
     const nav = useHistory();
-    const [form, changeForm] = useState({user:'',password:'',name:'',phone:''});
     const dispatch = useDispatch();
     const { loading } = useSelector(state => state.singUpReducer);
+    const [form, changeForm] = useState({user:'',password:'',name:'',phone:''});
     const onChange = e => changeForm({ ...form, [e.target.name]:e.target.value });
     const goTo = url => nav.push(url);
     const onSubmit = () => {
@@ -61,7 +61,9 @@ export default function NotFound(){
                             </label>
                             <input 
                                 type="phone" 
-                                id="phone" 
+                                id="phone"
+                                max="10"
+                                maxLength="10"
                                 onChange={onChange}
                                 value={form.phone}
                                 placeholder="442#######"
@@ -85,7 +87,7 @@ export default function NotFound(){
                             />
                         </div>
                         {
-                            loading ? 
+                            !loading ? 
                                 <button 
                                     disabled={loading}
                                     className="text-white bg-blue-500 border-0 py-2 px-8 focus:outline-none hover:bg-blue-600 rounded text-lg"

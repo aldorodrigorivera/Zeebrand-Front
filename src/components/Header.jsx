@@ -1,17 +1,32 @@
 import React from 'react'
+import { Link, useHistory } from 'react-router-dom';
+import { deleteSession } from '../herlpers/session';
+import { showInfo } from '../herlpers/alert';
+import { useDispatch } from 'react-redux';
+import { logout } from '../actions/login';
 export default function Header (){
+    const nav = useHistory();
+    const dispatch = useDispatch();
+    const closeSession = () => {
+        dispatch(logout());
+        deleteSession();
+        nav.push('/');
+    }
+    const nextTime = () => {
+        showInfo('Ups!','Lo sentimos, esta características estará disponible pronto');
+    };
     return (
         <div>
             <header className="text-gray-600 body-font">
                 <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-                    <a href="#" className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+                    <Link to="#" className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
                     <span className="ml-3 text-xl">Zeebrands</span>
-                    </a>
+                    </Link>
                     <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
-                    <a href="#" className="mr-5 hover:text-gray-900">Ofertas</a>
-                    <a href="#" className="mr-5 hover:text-gray-900">Pedidos</a>
-                    <a href="#" className="mr-5 hover:text-gray-900">Sorprendete</a>
-                    <a href="#" className="mr-5 hover:text-gray-900">Salir</a>
+                    <Link to="/products" className="mr-5 hover:text-gray-900">Productos</Link>
+                    <Link to="/create-product" className="mr-5 hover:text-gray-900">Registrar Producto</Link>
+                    <Link to="#" onClick={() => nextTime()} className="mr-5 hover:text-gray-900">Sorpréndete</Link>
+                    <Link to="#" onClick={() => closeSession()} className="mr-5 hover:text-gray-900">Cerrar sesión</Link>
                     </nav>
                 </div>
             </header>
