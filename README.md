@@ -15,7 +15,7 @@ Dentro de las tecnologías usadas se encuentran las siguientes:
 - Redux
 - Tilwind CSS
 - Axios
-- Netlify ([Docs](https://www.netlify.com))
+- Netlify ([Docs](https://zebrand.netlify.app/))
 
 Dentro de las herramientas usadas podrás encontrar a **Postman** donde se publicó toda la documentación relacionada al API del proyecto ([Docs](https://documenter.getpostman.com/view/2644356/Tzz4SKfR "Docs")).
 
