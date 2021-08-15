@@ -89,6 +89,7 @@ export default function NotFound(){
                         {
                             !loading ? 
                                 <button 
+                                    data-cy="btnSubmit"
                                     disabled={loading}
                                     className="text-white bg-blue-500 border-0 py-2 px-8 focus:outline-none hover:bg-blue-600 rounded text-lg"
                                     onClick={() => onSubmit()}
@@ -103,6 +104,7 @@ export default function NotFound(){
                             Si no tienes cuenta te invitamos a registrarte y no te pierdas de la experiencia
                         </p>
                         <button 
+                            data-cy="btnBack"
                             className="flex mx-auto mt-16 text-white bg-blue-500 border-0 py-2 px-8 focus:outline-none hover:bg-blue-600 rounded text-lg"
                             onClick={() => goTo('/')}
                         > Regresar </button>

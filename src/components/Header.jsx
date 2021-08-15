@@ -23,10 +23,10 @@ export default function Header (){
                     <span className="ml-3 text-xl">Zeebrands</span>
                     </Link>
                     <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
-                    <Link to="/products" className="mr-5 hover:text-gray-900">Productos</Link>
-                    <Link to="/create-product" className="mr-5 hover:text-gray-900">Registrar Producto</Link>
-                    <Link to="#" onClick={() => nextTime()} className="mr-5 hover:text-gray-900">Sorpréndete</Link>
-                    <Link to="#" onClick={() => closeSession()} className="mr-5 hover:text-gray-900">Cerrar sesión</Link>
+                    <Link to="/products" id="btnList" className="mr-5 hover:text-gray-900">Productos</Link>
+                    <Link to="/create-product" id="btnCreate" className="mr-5 hover:text-gray-900">Registrar Producto</Link>
+                    <Link to="#" id="btnSoon" onClick={() => nextTime()} className="mr-5 hover:text-gray-900">Sorpréndete</Link>
+                    <Link to="#" id="btnLogout" onClick={() => closeSession()} className="mr-5 hover:text-gray-900">Cerrar sesión</Link>
                     </nav>
                 </div>
             </header>
