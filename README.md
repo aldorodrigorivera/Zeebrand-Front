@@ -1,11 +1,11 @@
-# Zeebrand-frontend
+# Zebrand-frontend
 
 ### Aldo Rodrigo Rivera Carrillo
 ###### aldorodrigo.rivera@gmail.com
 
 **Descripción**
 
-Este proyecto es única y exclusivamente para la prueba técnica hecha en la empresa de **Zeebrand**. Todo lo relacionado al proyecto estará disponible máximo 2 meses arriba, una vez trasncurrido ese tiempo se bajarán los servicios y dejará de funcionar con normalidad.
+Este proyecto es única y exclusivamente para la prueba técnica hecha en la empresa de **Zebrand**. Todo lo relacionado al proyecto estará disponible máximo 2 meses arriba, una vez trasncurrido ese tiempo se bajarán los servicios y dejará de funcionar con normalidad.
 
 En este repositorio se encuentra todo lo relacionado con el Frontent. Este proyecto será desplegado en una instancia de Netlify ([Site](google.com)).
 
