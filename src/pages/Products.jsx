@@ -30,7 +30,7 @@ export default function Products () {
                 </div>
                 {
                     !loading ? 
-                    <div className="grid lg:grid-flow-col lg:grid-cols-3 md:grid-flow-col md:grid-cols-2 sm:grid-flow-col md:grid-cols-1">
+                    <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 grid-flow-row gap-4">
                         {
                             products.map((item) => <ProductItem 
                                 key={item.objectId} 
