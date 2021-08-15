@@ -1,4 +1,4 @@
-# Zeebrand-backend
+# Zeebrand-frontend
 
 ### Aldo Rodrigo Rivera Carrillo
 ###### aldorodrigo.rivera@gmail.com
