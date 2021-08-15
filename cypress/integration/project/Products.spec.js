@@ -20,6 +20,33 @@ describe("PRODUCTS :: Initial render", () => {
         cy.wait(2000);
         cy.visit("http://localhost:3000/create-product");
         cy.contains("Registra nuevos productos");
+
+        cy.get("#btnSubmit").click();
+        cy.get("#swal2-html-container")
+            .should("exist")
+            .contains("Escribe un nombre del producto");
+        cy.get(".swal2-confirm").click();
+
+        cy.get("#name").type("TestName");
+        cy.get("#btnSubmit").click();
+        cy.get("#swal2-html-container")
+            .should("exist")
+            .contains("Escribe la marca del producto");
+        cy.get(".swal2-confirm").click();
+
+        cy.get("#brand").type("Testbrand");
+        cy.get("#btnSubmit").click();
+        cy.get("#swal2-html-container")
+            .should("exist")
+            .contains("Escribe un precio mayor a $100 MXN");
+        cy.get(".swal2-confirm").click();
+
+        cy.get("#price").clear().type(300);
+        cy.get("#btnSubmit").click();
+        cy.get("#swal2-html-container")
+            .should("exist")
+            .contains("Escribe la url de la imagen del producto");
+        cy.get(".swal2-confirm").click();
     }); 
 
     it("should show logout :: /products", () => {
