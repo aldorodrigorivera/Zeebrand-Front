@@ -32,13 +32,13 @@ export default function CreateProduct() {
                         <div className="mx-auto w-full">
                             <div className="lg:w-3/5 mx-auto md:w-full">
                                 <label 
-                                    htmlFor="hero-field" 
+                                    htmlFor="name" 
                                     className="leading-7 text-sm text-gray-600">
                                         Nombre del producto
                                 </label>
                                 <input 
                                     type="text" 
-                                    id="hero-field" 
+                                    id="name" 
                                     name="name"
                                     onChange={onChange}
                                     value={form.name} 
@@ -46,13 +46,13 @@ export default function CreateProduct() {
                             </div>
                             <div className="lg:w-3/5 mx-auto md:w-full">
                                 <label 
-                                    htmlFor="hero-field" 
+                                    htmlFor="brand" 
                                     className="leading-7 text-sm text-gray-600">
                                         Marca del producto
                                 </label>
                                 <input 
                                     type="text" 
-                                    id="hero-field" 
+                                    id="brand" 
                                     name="brand" 
                                     onChange={onChange}
                                     value={form.brand}
@@ -60,13 +60,13 @@ export default function CreateProduct() {
                             </div>
                             <div className="lg:w-3/5 mx-auto md:w-full">
                                 <label 
-                                    htmlFor="hero-field" 
+                                    htmlFor="price" 
                                     className="leading-7 text-sm text-gray-600">
                                         Precio del producto
                                 </label>
                                 <input 
                                     type="number" 
-                                    id="hero-field" 
+                                    id="price" 
                                     name="price" 
                                     onChange={onChange}
                                     value={form.price} 
@@ -74,13 +74,13 @@ export default function CreateProduct() {
                             </div>
                             <div className="lg:w-3/5 mx-auto md:w-full">
                                 <label 
-                                    htmlFor="hero-field" 
+                                    htmlFor="url" 
                                     className="leading-7 text-sm text-gray-600">
                                         Imagen URL del producto
                                 </label>
                                 <input 
                                     type="url" 
-                                    id="hero-field" 
+                                    id="url" 
                                     name="url"
                                     onChange={onChange}
                                     value={form.url} 
@@ -91,6 +91,7 @@ export default function CreateProduct() {
                             {
                                 !loading ?
                                 <button 
+                                    id="btnSubmit"
                                     className="flex mx-auto mt-8 text-white bg-blue-500 border-0 py-2 px-8 focus:outline-none hover:bg-blue-600 rounded text-lg"
                                     onClick={() => onSubmit()}
                                 >Guardar producto 💈</button>

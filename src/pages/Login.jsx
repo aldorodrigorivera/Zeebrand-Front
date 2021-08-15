@@ -24,11 +24,11 @@ export default function NotFound() {
         <div className="text-gray-600 body-font">
             <div className="container px-5 py-24 mx-auto flex flex-wrap items-center">
                 <div className="lg:w-2/5 md:w-1/2 md:pr-16 lg:pr-0 pr-0 text-center">
-                    <strong>Hey! 🤩</strong>
+                    <strong data-cy="loginTitle">Hey! 🤩</strong>
                     <p className="leading-relaxed mt-4">
                         La administracion del sitio es privada, 
                         Si no tienes cuenta te invitamos a registrarte y no te pierdas de la experiencia
-                        <Link to='/singup' className="text-blue-500"> Aquí.</Link>
+                        <Link data-cy="singupHref" to='/singup' className="text-blue-500"> Aquí.</Link>
                     </p>
                 </div>
                 <div className="lg:w-3/6 md:w-1/2 bg-gray-50 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0">
@@ -40,6 +40,7 @@ export default function NotFound() {
                              Correo electronico
                         </label>
                         <input 
+                            data-cy="txtEmail"
                             type="text" 
                             id="user"
                             onChange={onChange}
@@ -66,7 +67,8 @@ export default function NotFound() {
                     </div>
                     {
                         !loading ? 
-                            <button 
+                            <button
+                                data-cy="btnSubmit"
                                 disabled={loading}
                                 className="text-white bg-blue-500 border-0 py-2 px-8 focus:outline-none hover:bg-blue-600 rounded text-lg"
                                 onClick={() => onSubmit()}
@@ -77,6 +79,7 @@ export default function NotFound() {
                 </div>
             </div>
             <button 
+                data-cy="btnBack"
                 className="flex mx-auto mt-16 text-white bg-blue-500 border-0 py-2 px-8 focus:outline-none hover:bg-blue-600 rounded text-lg"
                 onClick={() => goTo('/')}
             > Regresar </button>
